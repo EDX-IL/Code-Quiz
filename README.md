@@ -14,13 +14,34 @@
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
 ### The challenge
 
-Describe the challenge here
+Build a timed code quiz with multiple-choice questions. The app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code. It will have a clean, polished, and responsive user interface. 
+
+The timed code quiz will be on Javascript fundamentals and store high scores.
+
+The code quiz will have the following: 
+
+* A start button that when clicked a timer starts and the first question appears.
+ 
+  * Questions contain buttons for each answer.
+  
+  * When answer is clicked, the next question appears
+  
+  * If the answer clicked was incorrect then subtract time 10 seconds from the clock
+
+* The quiz should end when all questions are answered or the timer reaches 0.
+
+  * When the game ends, it displays the score and give the user the ability to save their initials and their score
+
+
+
+
+
+  
 
 ### Screenshot
 
@@ -36,8 +57,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Git Hub Code Quiz](https://github.com/EDX-IL/Code-Quiz)
+- Live Site URL: [Code Quiz Webpage](https://github.com/EDX-IL/Code-Quiz)
 
 ## My process
 
@@ -45,8 +66,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 - Semantic HTML5 markup
 - CSS custom properties
-- Flexbox
-- CSS Grid
+- 
+- 
 - Mobile-first workflow
 
 
@@ -95,10 +116,8 @@ Use this section to outline areas that you want to continue focusing on in futur
   Ian Logendra
 - GitHub - [EDX-IL](https://github.com/EDX-IL)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
 ## Acknowledgments
 
 This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
