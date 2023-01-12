@@ -5,11 +5,12 @@ startButtonEl.addEventListener("click", fncDoQuiz);
 let timeEl = document.querySelector("#time");
 
 //This is the number of seconds for the quiz
-let quizTimeLeft = 60;
 
-//Main function to Do Quiz
+
+//Main function to Do Quiz - called when start button clicked
 function fncDoQuiz() 
 {
+    let quizTimeLeft = 5;
     console.log ("fncDoQuiz");
     //display the initial time
     timeEl.textContent = quizTimeLeft;
@@ -17,8 +18,7 @@ function fncDoQuiz()
 
     let timeInterval = setInterval(function () {
 
-        //ask questions
-
+      
 
         //if correct answer then add 1 point to score
         //else deduct time from clock   
@@ -27,32 +27,40 @@ function fncDoQuiz()
         timeEl.textContent = quizTimeLeft;
 
 
+        if (quizTimeLeft <  0)
+        {
+            // end of quiz
+            clearInterval(timeInterval);
+            timeEl.textContent = "Time's Up!  ";
+
+            //display player score
+            fncDisplayPlayerScore();
+
+
+            //get player's initials
+            fncGetPlayerInitials();
+
+            //save highscores
+            fncSaveHighScore();
+
+        }
+
+         //do the quiz until time is zero or no questions left
+                    //ask questions
+         console.log("ask questions");
+
+
+        console.log("after" + quizTimeLeft);
+
     },1000);
 
 
+    //need to stop this happening until quiz is complete
 
-    // do the quiz until time is zero or no questions left
-    // do {
-        
-    //     console.log ("Do while loop in fncDoQuiz");
-    //     fncAskQuestions;
-       
-    // }while (quizTimeLeft > 0);
+   
 
-    console.log("End of Quiz");
-    //Display Player Score
-    fncDisplayPlayerScore();
-
-    //get players Initials
-    fncGetPlayerInitials ();
-
-    //save players initials and score
-    fncSaveHighScore();
 
 }
-
-
-
 
 function fncAskQuestions() {
     console.log("fncAskQuestions");
