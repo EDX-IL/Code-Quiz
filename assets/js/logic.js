@@ -1,5 +1,7 @@
 //start button is clicked. Start Quiz
 let startButtonEl = document.querySelector("#start");
+
+//TODO look at ins 3-3 for function event rather than calling a function HERE
 startButtonEl.addEventListener("click", fncDoQuiz);
 
 let timeEl = document.querySelector("#time");
