@@ -1,5 +1,7 @@
 //start button is clicked. Start Quiz
 let startButtonEl = document.querySelector("#start");
+let startEl = document.querySelector(".start");
+//let endScreenEl = document.querySelector("#end-screen");
 
 //TODO look at ins 3-3 for function event rather than calling a function HERE
 startButtonEl.addEventListener("click", fncDoQuiz);
@@ -11,11 +13,14 @@ let timeEl = document.querySelector("#time");
 //Main function to Do Quiz - called when start button clicked
 function fncDoQuiz() {
   let quizTimeLeft = 5;
-  console.log(getFuncName());
+  //console.log(getFuncName());
+
+  //hide "#start-screen"
+  fncHideStartScreen();
 
   //display the initial time
   timeEl.textContent = quizTimeLeft;
-  console.log(quizTimeLeft);
+  // console.log(quizTimeLeft);
 
   //Ask Questions (function in questions.js)
   fncAskQuestions();
@@ -32,7 +37,7 @@ function fncDoQuiz() {
       clearInterval(timeInterval);
       timeEl.textContent = "Time's Up!  ";
       //End of Game
-      fncEndGame();
+   //   fncEndGame();
     }
 
     console.log("after " + quizTimeLeft);
@@ -44,12 +49,26 @@ function fncDoQuiz() {
 function fncEndGame() {
   console.log(getFuncName());
 
+  //HideQuestions div
+  fncHideQuestions();
+
+  //Unhide End-Screen div
+  fncUnhideEndScreen();
+
   //display player score (function in scores.js)
   fncDisplayPlayerScore();
 
-  //get player's initials  (function in scores.js)
+  //get player's initials and save highscores (function in scores.js)
   fncGetPlayerInitials();
+}
 
-  //save high scores  (function in scores.js)
-  fncSaveHighScore();
+function fncHideStartScreen() {
+  //console.log(getFuncName());
+  startEl.setAttribute("class", "hide");
+}
+
+function fncUnhideEndScreen() {
+  console.log(getFuncName());
+  //remove the hide class so the end-screen div shows
+  endScreenEl.classList.remove("hide");
 }
