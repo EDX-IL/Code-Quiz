@@ -2,6 +2,7 @@
 
 let questionArea = document.querySelector("#questions");
 let questionTitle = document.querySelector("#question-title");
+let choicesArea = document.querySelector("#choices");
 // let questionHide = document.querySelector("#questions .hide");
 //console .log("questionArea:"+questionArea);
 //console.log("questionHide:"+questionHide);
@@ -29,55 +30,82 @@ const questions = [
 let currentQuestion = 0;
 
 function fncAskQuestions() {
-  //console.log(getFuncName());
-
-  //unhide questions
-  unhideQuestionArea();
-
-  //Render the current question
-  renderQuestion();
-  checkAnswer();
-}
-
-//let choices = document.querySelector("#choices");
-
-function renderQuestion() {
   console.log(getFuncName());
+  //this stores whether the user has answered
+  let blnQuestionAnswered = false;
+  let blnAnswersDisplayed = false;
 
-  //display the question
-  questionTitle.textContent = questions[currentQuestion].question;
+  //unhide questions area - hidden by default in index.html
+  fncUnhideQuestionArea();
 
-  //create the buttons for each answer
-  for (
-    let index = 0;
-    index < questions[currentQuestion].answers.length;
-    index++
-  ) {
-    // console.log("number of answers:" + questions[currentQuestion].answers.length);
+  
+  //for loop for each question
+ // do {
+    //for (let index = 0; index < questions.length; index++) {
+    //display the question
+    questionTitle.textContent = questions[currentQuestion].question;
 
-    let answerEl = document.createElement("p");
-    let answerButton = document.createElement("button");
-     // let answerId = document.createElement("ID="+index);
-    //x answerEl.textContent = questions[currentQuestion].answers[index];
-    questionArea.appendChild(answerEl);
-    questionArea.appendChild(answerButton);
-   // questionArea.append(answerId);
+    //create the buttons for each answer using p and button elements
+    if (blnAnswersDisplayed === false) {
+      //display answers once
 
-    answerButton.textContent = questions[currentQuestion].answers[index];
-  }
+      for (
+        let index = 0;
+        index < questions[currentQuestion].answers.length;
+        index++
+      ) {
+        let answerEl = document.createElement("p");
+        let answerButton = document.createElement("button");
+        choicesArea.appendChild(answerEl);
+        choicesArea.appendChild(answerButton);
 
-  //check which button the use clicks
+        answerButton.textContent = questions[currentQuestion].answers[index];
+        answerButton.setAttribute("data-answerIndex", index);
+      }
+      //answers have been displayed
+      blnAnswersDisplayed = true;
+    }
+    //wait for answer clickedByUser 
+  //  do {
+      
 
+     questionArea.addEventListener("click", function (event) {
+     event.preventDefault();
 
+    let clickedByUser = event.target;
+    console.log("clickedByUser:" + clickedByUser);
 
+    let clickedAnswer = clickedByUser.getAttribute("data-answerIndex");
+
+    if (clickedByUser.matches("button")) {
+      if (
+        parseInt(clickedAnswer) === questions[currentQuestion].correctAnswer) {
+        //correct answer
+        fncCorrectAnswer();
+        }
+      else {
+        //wrong answer
+        fncWrongAnswer();
+          }
+         // currentQuestion++;
+
+     }
+     });
+ //   } while (blnQuestionAnswered===false && !blnTimesUp);
+//  } while (currentQuestion < questions.length );
 }
+//Render the current question
 
-function checkAnswer() {
+//function fncRenderQuestion() {
+
+//}
+
+// function fncRenderAnswers() {
+//   console.log(getFuncName());
+// }
+
+function fncUnhideQuestionArea() {
   console.log(getFuncName());
-}
-
-function unhideQuestionArea() {
-  //console.log(getFuncName());
   //remove the hide class so the questions div shows
   questionArea.classList.remove("hide");
 }
@@ -87,3 +115,36 @@ function fncHideQuestions() {
   //add class="hide so the questions div hides
   questionArea.classList.add("hide");
 }
+
+
+//called when user gets answer wrong
+function fncWrongAnswer() {
+  console.log(getFuncName());
+  //reduced timer by 10 seconds
+  quizTimeLeft = quizTimeLeft-10
+}
+
+
+//called when user gets answer correct
+function fncCorrectAnswer() {
+  console.log(getFuncName());
+  playerFinalScore++;
+}   
+
+// //function to clear answer buttons
+// function fncClearPotentialAnswers() {
+//   console.log(getFuncName());
+
+//   choicesArea.removeChild("p");
+
+//   for (
+//     let index = 0;
+//     index < questions[currentQuestion].answers.length;
+//     index++
+//   ) {
+//     let answerEl = document.createElement("p");
+//     let answerButton = document.createElement("button");
+//     choicesArea.removeChild(answerEl);
+//     choicesArea.removeChild(answerButton);
+//   }
+// }
