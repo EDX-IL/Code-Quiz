@@ -5,8 +5,8 @@ let endScreenEl = document.querySelector("#end-screen");
 let endScreenInitialsEl = document.querySelector("#initials");
 let endScreenButtonEl = document.querySelector("#submit");
 
-let HighScoresStore = [{ initials: "ACE", score: "100", }];
-
+//let highScoresStore = [{ initials: "ACE", score: "100", }];
+let highScoresStore = [];
 //players final score
 let playerFinalScore = 0;
 
@@ -46,9 +46,20 @@ function fncSaveHighScore() {
   console.log(getFuncName());
 ``//get the initials from initials text box
   playersInitials = endScreenInitialsEl.value;
-  console.log(playersInitials);
 
-  //save high score to local  storage
+  // players initials blank do ask user to enter 3 initials
+  if (playersInitials == ""){
+      //Player hasn't entered initials
+      alert("Please enter your initials");
+      fncGetPlayerInitials;
+
+  }
+
+    
+
+  localStorage.setItem("highScoresStore", JSON.stringify(playersInitials,playerFinalScore));
+
+  
 
 
   
