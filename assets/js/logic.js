@@ -43,7 +43,7 @@ function fncDoQuiz() {
       fncEndGame();
     }
 
-    console.log("after " + quizTimeLeft);
+   // console.log("after " + quizTimeLeft);
   }, 1000);
 
   //need to stop this happening until quiz is complete
