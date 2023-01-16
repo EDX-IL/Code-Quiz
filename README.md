@@ -137,6 +137,10 @@ Asynchronous calling of functions. How to wait for user response before continui
 
 ## Acknowledgments
 
-Anton
+Anton - fellow student. 
+Scott (TA)
+Andrew (TA)
+Jude (TA)
+All helped with making progress on the task
 
 
