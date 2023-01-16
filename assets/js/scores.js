@@ -76,17 +76,17 @@ function fncRenderHighScoresPage() {
 
   //open highscores page
   window.location.href = "highscores.html";
-  highScoresOl.textContent = "200";
+ // highScoresOl.textContent = "200";
 
   //console.log("localStorage:" + localStorage.length);
   //for each item in local score display the scores
   for (let index = 0; index < localStorage.length; index++) {
-   // let createHighScoreEl = document.createElement("ul");
-   // highScoresOl.appendChild(createHighScoreEl);
-   console.log (window.localStorage.getItem('HSS'));
-  //  let displayPI = JSON.parse(window.localStorage.getItem('PI'));
-  //  let displayPFS = JSON.parse(window.localStorage.getItem("PFS"));
-    highScoresOl.textContent = "100";
- //   highScoresOl.textContent(displayPI + " - " + displayPFS);
+    let createHighScoreEl = document.createElement("ul");
+    highScoresOl.appendChild(createHighScoreEl);
+ //  console.log (window.localStorage.getItem('HSS'));
+   let displayPI = JSON.parse(window.localStorage.getItem('PI'));
+   let displayPFS = JSON.parse(window.localStorage.getItem("PFS"));
+ //   highScoresOl.textContent = "100";
+  highScoresOl.textContent(displayPI + " - " + displayPFS);
   }
 }
