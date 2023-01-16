@@ -22,17 +22,17 @@ if (window.location.pathname == "/highscores.html") {
 
 //This function will clear the highscores
 function fncClearHighScores() {
-  console.log(getFuncName());
+//  console.log(getFuncName());
 }
 
 //function to display Player Final Score
 function fncDisplayPlayerScore() {
-  console.log(getFuncName());
+//  console.log(getFuncName());
   finalScoreEl.textContent = playerFinalScore;
 }
 
 function fncGetPlayerInitials() {
-  console.log(getFuncName());
+ // console.log(getFuncName());
   //add listener for submit via enter button to get final score and save hightscore
   endScreenInitialsEl.addEventListener("keyup", function(event) {
     if (event.key === 13) { fncSaveHighScore}});
@@ -43,7 +43,7 @@ function fncGetPlayerInitials() {
 }
 
 function fncSaveHighScore() {
-  console.log(getFuncName());
+ // console.log(getFuncName());
 ``//get the initials from initials text box
   playersInitials = endScreenInitialsEl.value;
 
@@ -59,7 +59,7 @@ function fncSaveHighScore() {
 
   localStorage.setItem("highScoresStore", JSON.stringify(playersInitials,playerFinalScore));
 
-  
+
 
 
   

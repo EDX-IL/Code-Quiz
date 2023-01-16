@@ -15,7 +15,7 @@ let timeEl = document.querySelector("#time");
 
 //Main function to Do Quiz - called when start button clicked
 function fncDoQuiz() {
-  console.log(getFuncName());
+ // console.log(getFuncName());
 
   //hide "#start-screen"
   fncHideStartScreen();
@@ -50,7 +50,7 @@ function fncDoQuiz() {
 }
 
 function fncEndGame() {
-  console.log(getFuncName());
+ // console.log(getFuncName());
 
   //HideQuestions div
   fncHideQuestions();
@@ -67,12 +67,12 @@ function fncEndGame() {
 }
 
 function fncHideStartScreen() {
-  console.log(getFuncName());
+ // console.log(getFuncName());
   startEl.setAttribute("class", "hide");
 }
 
 function fncUnhideEndScreen() {
-  console.log(getFuncName());
+ // console.log(getFuncName());
   //remove the hide class so the end-screen div shows
   endScreenEl.classList.remove("hide");
 }

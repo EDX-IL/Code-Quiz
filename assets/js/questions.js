@@ -30,7 +30,7 @@ const questions = [
 let currentQuestion = 0;
 
 function fncAskQuestions() {
-  console.log(getFuncName());
+ // console.log(getFuncName());
   //this stores whether the user has answered
   let blnQuestionAnswered = false;
   let blnAnswersDisplayed = false;
@@ -73,7 +73,7 @@ function fncAskQuestions() {
      event.preventDefault();
 
     let clickedByUser = event.target;
-    console.log("clickedByUser:" + clickedByUser);
+   // console.log("clickedByUser:" + clickedByUser);
 
     let clickedAnswer = clickedByUser.getAttribute("data-answerIndex");
 
@@ -94,9 +94,7 @@ function fncAskQuestions() {
  //   } while (blnQuestionAnswered===false && !blnTimesUp);
 //  } while (currentQuestion < questions.length );
 }
-//Render the current question
 
-//function fncRenderQuestion() {
 
 //}
 
@@ -105,13 +103,13 @@ function fncAskQuestions() {
 // }
 
 function fncUnhideQuestionArea() {
-  console.log(getFuncName());
+ // console.log(getFuncName());
   //remove the hide class so the questions div shows
   questionArea.classList.remove("hide");
 }
 
 function fncHideQuestions() {
-  console.log(getFuncName());
+//  console.log(getFuncName());
   //add class="hide so the questions div hides
   questionArea.classList.add("hide");
 }
@@ -119,7 +117,7 @@ function fncHideQuestions() {
 
 //called when user gets answer wrong
 function fncWrongAnswer() {
-  console.log(getFuncName());
+//  console.log(getFuncName());
   //reduced timer by 10 seconds
   quizTimeLeft = quizTimeLeft-10
 }
@@ -127,7 +125,7 @@ function fncWrongAnswer() {
 
 //called when user gets answer correct
 function fncCorrectAnswer() {
-  console.log(getFuncName());
+  // console.log(getFuncName());
   playerFinalScore++;
 }   
 
