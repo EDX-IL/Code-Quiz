@@ -52,7 +52,7 @@ The code quiz will have the following:
 ### Links
 
 - Solution URL: [Git Hub Code Quiz](https://github.com/EDX-IL/Code-Quiz)
-- Live Site URL: [Code Quiz Webpage](https://github.com/EDX-IL/Code-Quiz)
+- Live Site URL: [Code Quiz Webpage](https://edx-il.github.io/Code-Quiz/)
 
 ## My process
 
